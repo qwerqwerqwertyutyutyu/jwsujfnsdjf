@@ -1,7 +1,10 @@
+local cloneref = cloneref or function(o) return o end
+local COREGUI = cloneref(game:GetService("CoreGui"))
+local UserInputService = cloneref(game:GetService("UserInputService"))
+local RunService = cloneref(game:GetService("RunService"))
+local Players = cloneref(game:GetService("Players"))
+
 local PinguinUI = {}
-local UserInputService = game:GetService("UserInputService")
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 local Mouse = LocalPlayer:GetMouse()
 
@@ -146,7 +149,7 @@ function PinguinUI.new(config)
     local MainContainerCorner = Instance.new("UICorner")
 
     ScreenGui.Name = "PinguinUI"
-    ScreenGui.Parent = game.CoreGui
+    ScreenGui.Parent = COREGUI
     ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
     MainFrame.Name = "MainFrame"
